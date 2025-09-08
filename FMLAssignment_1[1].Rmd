@@ -1,0 +1,91 @@
+---
+title: "Assignment 1 FML"
+author: "Ashrith"
+date: "2025-09-07"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+ #I have assigned variable "supermarket_sales" to the supermarket_sales_data dataset
+```{r}
+supermarket_sales_data <- read.csv("C:/Users/ashri/OneDrive/Desktop/FML/Supermarket sales.csv")
+#View(supermarket_sales_data)
+head(supermarket_sales_data)
+```
+
+```{r}
+mode(supermarket_sales_data$Quantity)
+```
+```{r}
+median(supermarket_sales_data$Unit.price)
+```
+```{r}
+mean(supermarket_sales_data$Unit.price)
+```
+```{r}
+max(supermarket_sales_data$Unit.price)
+```
+```{r}
+sd(supermarket_sales_data$Unit.price)
+```
+These values represent descriptive statistics for a selection of quantitave variables.
+The above mentioned values determines mode, median, standard deviation, maximum for the quatitative variables.
+
+```{r}
+str(supermarket_sales_data$Payment)
+```
+These values represent categorical descriptive analysis of variables.
+
+
+
+I Summarized descriptive statistics for a selection of quantitative and categorical variables. / Whereas categorical is "Branch"  And quantitative is "Unit.price"
+```{r}
+summary(supermarket_sales_data$Branch)
+
+```
+```{r}
+summary(supermarket_sales_data$Unit.price)
+```
+I have transformed the Unit.price to a new amount by raising it.
+
+
+```{r}
+increased_Unit.price <- sqrt(supermarket_sales_data$Unit.price)
+new_price <- (supermarket_sales_data$Unit.price - increased_Unit.price)
+
+```
+
+I generated a scatter plot correlating "Rating" with "Unit.price"
+```{r}
+x <-supermarket_sales_data$Rating
+y <-supermarket_sales_data$Unit.price
+plot(x,y, main="scatterplot", xlab = "Rating" , ylab = "Unit.price")
+
+
+```
+
+
+The below graphical representation is a histogram.
+
+```{r}
+
+hist(supermarket_sales_data$Unit.price)
+```
+
+
+
+ The above graphical representation is a histogram 
+
+
+
+
+
+
+      This dataset is imported from : https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales
